@@ -21,6 +21,9 @@
     },
     "extra": {
         "laravel": {
+            "aliases": {
+                "Feature": "LaravelFeatures\\Facades\\Feature"
+            },
             "providers": [
                 "LaravelFeatures\\FeaturesServiceProvider"
             ]
