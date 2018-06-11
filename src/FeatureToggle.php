@@ -35,8 +35,8 @@ class FeatureToggle extends Model
      */
     public function scopeFeaturable($query, $model)
     {
-        return $query->where("featurable_type", $model->getMorphClass())
-            ->where("featurable_id", $model->getKey());
+        return $query->where('featurable_type', $model->getMorphClass())
+            ->where('featurable_id', $model->getKey());
     }
 
     /**

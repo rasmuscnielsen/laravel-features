@@ -5,8 +5,8 @@ namespace LaravelFeatures\Tests;
 use Faker\Generator;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Str;
-use LaravelFeatures\FeatureToggle;
 use LaravelFeatures\Feature;
+use LaravelFeatures\FeatureToggle;
 use LaravelFeatures\Tests\Stubs\Job;
 use LaravelFeatures\Tests\Stubs\User;
 
