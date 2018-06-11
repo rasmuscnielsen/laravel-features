@@ -46,7 +46,7 @@ class FeatureRepository
     protected function getToggleOrNew($name, $featurable)
     {
         return FeatureToggle::firstOrNew([
-            'feature_id' => Feature::where('slug', $name)->firstOrFail()->id,
+            'feature_id' => Feature::fromSlug($name)->id,
             'featurable_id' => $featurable->getKey(),
             'featurable_type' => $featurable->getMorphClass(),
         ]);

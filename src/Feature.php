@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Feature extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,
+        TogglesValue;
 
     /**
      * @var array
@@ -20,6 +21,15 @@ class Feature extends Model
     protected $casts = [
         'value' => 'int',
     ];
+
+    /**
+     * @param $slug
+     * @return $this
+     */
+    public static function fromSlug($slug)
+    {
+        return static::where('slug', $slug)->firstOrFail();
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

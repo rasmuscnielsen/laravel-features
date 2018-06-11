@@ -7,17 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class FeatureToggle extends Model
 {
-    /**
-     * @var array
-     */
-    protected $guarded = [];
+    use TogglesValue;
 
     /**
      * @var array
      */
-    protected $casts = [
-        'value' => 'int',
-    ];
+    protected $guarded = [];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -37,30 +32,5 @@ class FeatureToggle extends Model
     {
         return $query->where('featurable_type', $model->getMorphClass())
             ->where('featurable_id', $model->getKey());
-    }
-
-    /**
-     * @param null $value
-     * @return $this
-     */
-    public function toggle($value = null)
-    {
-        return tap($this->fill(['value' => $value ?? ! $this->value])->save());
-    }
-
-    /**
-     * @return $this
-     */
-    public function enable()
-    {
-        return tap($this->fill(['value' => 1])->save());
-    }
-
-    /**
-     * @return $this
-     */
-    public function disable()
-    {
-        return tap($this->fill(['value' => 0])->save());
     }
 }
