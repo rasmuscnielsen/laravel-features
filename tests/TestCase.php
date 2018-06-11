@@ -5,7 +5,6 @@ namespace LaravelFeatures\Tests;
 use Illuminate\Database\Migrations\Migrator;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use LaravelFeatures\FeaturesServiceProvider;
-use Schema;
 
 class TestCase extends BaseTestCase
 {
