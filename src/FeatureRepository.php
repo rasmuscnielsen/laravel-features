@@ -31,7 +31,7 @@ class FeatureRepository
      * @param Model $featurable
      * @return bool
      */
-    public function isEnabledFor($name, $featurable)
+    public function enabledFor($name, $featurable)
     {
         $toggle = $this->getToggleOrNew($name, $featurable);
 
